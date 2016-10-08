@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "me.tombailey.downloadovertor"
-        minSdkVersion 9
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -20,13 +20,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.0'
     testCompile 'junit:junit:4.12'
-    compile files('libs/orchid-1.0.0.jar')
-
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    compile 'com.msopentech.thali:ThaliOnionProxyAndroid:0.0.2'
+    compile 'org.slf4j:slf4j-android:1.7.7'
+
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
 }
