@@ -19,6 +19,15 @@ android {
     }
 }
 
+allprojects {
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
 dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -27,7 +36,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
 
-    compile 'com.msopentech.thali:ThaliOnionProxyAndroid:0.0.2'
+    compile(name: 'ThaliOnionProxyAndroid-release', ext: 'aar')
+    compile 'org.slf4j:slf4j-api:1.7.7'
     compile 'org.slf4j:slf4j-android:1.7.7'
 
     compile 'io.reactivex:rxandroid:1.2.1'
